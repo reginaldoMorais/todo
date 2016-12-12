@@ -11,10 +11,7 @@ $ npm install --save react react-dom redux react-redux immutable
 $ npm install --save-dev webpack babel-loader babel-core babel-preset-es2015 babel-preset-react
 ```
 
-### 2 - Configurando Webpack
-
-Criando arquivo webpack.config.js
-
+### 2 - Rodando projeto
 ```
-$ touch webpack.config.js
+$ npm run start
 ```

@@ -2,7 +2,6 @@ import React from 'react';
 import Todo from './Todo';
 
 class TodoList extends React.Component {
-  
   onSubmit(event, addTodo) {
     const input = event.target;
     const text = input.value;
@@ -17,8 +16,6 @@ class TodoList extends React.Component {
 
   render() {
     const { todos, addTodo, toggleTodo } = this.props;
-    console.log(todos);
-    
     return (
       <div className='todo'>
         <input type='text' placeholder='Adicionar tarefas' onKeyDown={(event) => this.onSubmit(event,  addTodo)} />
