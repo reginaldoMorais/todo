@@ -1,0 +1,35 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "mocha": true,
+    "node": true,
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "globals": {
+    "newrelic": true,
+    "expect": true,
+    "initPhotoSwipeFromDOM": true,
+    "feather": true
+  },
+  "rules": {
+    "no-case-declarations": "warn",
+    "require-jsdoc": "off",
+    "no-console": "off",
+    "max-len": "off",
+    "new-cap": "off",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "object-curly-spacing": ["error", "always"]
+  }
+}
