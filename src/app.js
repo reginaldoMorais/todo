@@ -1,5 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Todo from './components/Todo';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducers/reducer';
+import { TodoList } from './containers';
+import { List, Map } from 'immutable';
 
-render(<Todo />, document.getElementById('app'));
+const initialState = List([]);
+const store = createStore(reducer, initialState);
+
+render(
+  <Provider store={store}>
+    <TodoList />
+  </Provider>,
+  document.getElementById('app')
+);
