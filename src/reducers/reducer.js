@@ -16,6 +16,9 @@ export default function(todos=init, action) {
           return t;
         }
       });
+    case 'DELETE_TODO':
+      console.log('DELETE_TODO');  
+      return todos = init;  
     default:
       return todos;
   }
