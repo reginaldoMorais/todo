@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
 import Todo from './Todo';
 
 class TodoList extends React.Component {
@@ -15,7 +17,7 @@ class TodoList extends React.Component {
   }
 
   render() {
-    const { todos, addTodo, toggleTodo } = this.props;
+    const { todos, addTodo, toggleTodo, deleteTodo } = this.props;
     return (
       <div className='todo'>
         <input type='text' placeholder='Adicionar tarefas' onKeyDown={(event) => this.onSubmit(event,  addTodo)} />
@@ -26,9 +28,11 @@ class TodoList extends React.Component {
             </li>
           ))}
         </ul>
+        <button className="todo__button" onClick={(event) => deleteTodo()}>Deletar lista</button>
       </div>
     );
   }
 }
 
-export default TodoList;
+const mapStateToProps = (todos) => ({ todos });
+export default connect(mapStateToProps, actions)(TodoList);
